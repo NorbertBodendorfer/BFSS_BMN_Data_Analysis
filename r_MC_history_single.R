@@ -58,7 +58,7 @@ printf("\n\n\n|------------------------|\n| R data analysis script |\n|---------
 printf("Arguments: target_directory file_pattern itraj_start itraj_stop \n\n")
 
 
-printf("e.g.: ./r_data_analysis.Rd BFSS_prod_output GBN48S48T0.872M0D25_F1_ 10000 50000 \n\n")
+printf("e.g.: ./r_MC_history_single.R prod_broad_output GN24S12T0.543M2.0D9_F1 1 80000 \n\n")
 
 printf("Upper limit < 1: no upper limit.\n\n")
 
@@ -107,6 +107,9 @@ printf("Done.\n\n")
 
 printf("Making plots for")
 print(plot_labels)
+
+# order by itraj in case files are not present in itraj order
+all_data <- all_data[order(all_data$itraj),]
 
 
 for(plot_loop in plot_labels){

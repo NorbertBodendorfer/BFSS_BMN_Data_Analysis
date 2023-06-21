@@ -83,7 +83,7 @@ PrintScriptName("R correlogram script using ggplot2")
 printf("Arguments: target_directory file_pattern itraj_start itraj_stop \n\n")
 
 
-printf("e.g.: ./r_correlogram.R prod_broad_output GN24S12T0.543M2.0D9_F1 1 20000 \n\n")
+printf("e.g.: ./r_correlogram_gg.R prod_broad_output GN24S12T0.543M2.0D9_F1 1 20000 \n\n")
 
 printf("itraj_stop < 1: no upper limit on trajectory number.\n\n")
 

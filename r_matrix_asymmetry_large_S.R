@@ -43,7 +43,6 @@ source("r_GeneralSettings.R")
 ######### Function defines
 
 source("r_GeneralFunctions.R")
-source("r_ReadPhaseFilesToDataTable.R")
 source("r_ErrorBars.R")
 
 library(geometry) 
@@ -55,14 +54,14 @@ PrintScriptName("R matrix asymmetry large S")
 
 printf("Arguments: U/G(B)Nxx file_pattern_starting_at_T \n\n")
 
-printf("e.g.: ./r_matrix_asymmetry_large_S_production_lowT.R GN16 T0.3M0.5D9_F \n\n")
+printf("e.g.: ./r_matrix_asymmetry_large_S.R GN16 T0.3M0.5D9_F \n\n")
 
 
 
 
 
 
-file_pattern_read <- p("matrix_sizes_", UGB, "S*", file_pattern, "*.csv")
+file_pattern_read <- p("processed/matrix_sizes_", UGB, "S*", file_pattern, "*.csv")
 
 
 ### Extract T

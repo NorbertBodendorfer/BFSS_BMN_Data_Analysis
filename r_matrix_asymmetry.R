@@ -59,7 +59,7 @@ PrintScriptName("R matrix asymmetry script")
 printf("Arguments: target_directory file_pattern itraj_start itraj_stop \n\n")
 
 
-printf("e.g.: ./r_matrix_asymmetry_production_lowT.R prod_broad_output GN16S30T0.3M0.5D9_F12 2000 -1 \n\n")
+printf("e.g.: ./r_matrix_asymmetry.R prod_broad_output GN16S30T0.3M0.5D9_F12 2000 -1 \n\n")
 
 printf("itraj_stop < 1: no upper limit on trajectory number.\n\n")
 
@@ -101,7 +101,7 @@ for(i in 1:10) {
     matrix_frame[i, "S"] <- S
 }
 
-matrix_file <- p("matrix_sizes_", file_pattern, ".csv")
+matrix_file <- p("processed/matrix_sizes_", file_pattern, ".csv")
 
 write.table(matrix_frame, file = matrix_file, qmethod = "double", row.names=FALSE, sep = ",")
 

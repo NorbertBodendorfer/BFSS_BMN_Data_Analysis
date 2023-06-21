@@ -27,6 +27,9 @@ set_tolerance <- 1e-10
 set_minFactor <- 1e-12
 set_maxiter <- 50000
 
+# Set this to true to perform a range of additional fits
+additional_fits <- FALSE
+
 
 #options(error=traceback)
 
@@ -55,7 +58,6 @@ source("r_GeneralSettings.R")
 ######### Function defines
 
 source("r_GeneralFunctions.R")
-source("r_ReadPhaseFilesToDataTable.R")
 source("r_ErrorBars.R")
 
 library(geometry) 
@@ -74,7 +76,7 @@ printf("e.g.: ./r_observable_large_NS.R G T0.3M0.5D9_F \n\n")
 
 
 
-file_pattern_read <- p("observables_", UGB, "*", file_pattern, "*.csv")
+file_pattern_read <- p("processed/observables_", UGB, "*", file_pattern, "*.csv")
 
 
 ### Extract T
@@ -277,7 +279,7 @@ for(i in 1:n_obs) {
 
 
     # Additional models to try
-    if(1==0) {
+    if(additional_fits) {
 
         printf("\n\nModel with all corrections at order two in Ninv and Sinv, no 1/N^4\n")
         quadFunction <- function(Ninv,Sinv,c,cN,cS,cNS,cSS){c + cN * Ninv + cS * Sinv + cSS * Sinv * Sinv + cNS * Sinv * Ninv}

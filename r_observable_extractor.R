@@ -94,7 +94,7 @@ observable_frame <- foreach(i=1:n_obs, .combine=rbind) %do% {
 print(observable_frame)
 
 
-observable_file <- p("observables_", file_pattern, ".csv")
+observable_file <- p("processed/observables_", file_pattern, ".csv")
 
 write.table(observable_frame, file = observable_file, qmethod = "double", row.names=FALSE, sep = ",")
 

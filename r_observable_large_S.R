@@ -49,7 +49,6 @@ source("r_GeneralSettings.R")
 ######### Function defines
 
 source("r_GeneralFunctions.R")
-source("r_ReadPhaseFilesToDataTable.R")
 source("r_ErrorBars.R")
 
 library(geometry) 
@@ -68,7 +67,7 @@ printf("e.g.: ./r_observable_large_S.R GN16 T0.3M0.5D9_F \n\n")
 
 
 
-file_pattern_read <- p("observables_", UGB, "S*", file_pattern, "*.csv")
+file_pattern_read <- p("processed/observables_", UGB, "S*", file_pattern, "*.csv")
 
 
 ### Extract T

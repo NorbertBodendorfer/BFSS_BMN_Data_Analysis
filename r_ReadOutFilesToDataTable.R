@@ -96,7 +96,7 @@ ReadOutFileToDataTable <- function(target_directory, file_pattern, itraj_start, 
 
             printf("\tReading %s with header size %d.\n", f, header_size)	
             tryCatch({
-                try(fread(f, skip=header_size, select = col_vec)) # The sep="" command messes up fread, needs to be dropped. 
+                try(fread(f, skip=header_size, select = col_vec, fill=TRUE, na.strings = c("***************"))) 
             }, warning = function(w) {
                 warning(w)
             }, error = function(e) {
@@ -116,7 +116,7 @@ ReadOutFileToDataTable <- function(target_directory, file_pattern, itraj_start, 
 
             printf("\tReading %s with header size %d.\n", f, header_size)	
             tryCatch({
-                try(fread(f, skip=header_size, select = col_vec)) # The sep="" command messes up fread, needs to be dropped. 
+                try(fread(f, skip=header_size, select = col_vec, fill=TRUE, na.strings = c("***************"))) 
             }, warning = function(w) {
                 warning(w)
             }, error = function(e) {
