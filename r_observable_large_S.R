@@ -49,7 +49,6 @@ source("r_GeneralSettings.R")
 ######### Function defines
 
 source("r_GeneralFunctions.R")
-source("r_ReadPhaseFilesToDataTable.R")
 source("r_ErrorBars.R")
 
 library(geometry) 
@@ -424,9 +423,9 @@ suppressMessages(ggsave(data_plot, file=plot_file))
 
 
 
-data_file <- file_pattern_read <- p("processed/observables_", UGB, "Soo", file_pattern, ".csv")
+data_file <- file_pattern_read <- p("observables_", UGB, "Soo", file_pattern, ".csv")
 
-data_file_error <- file_pattern_read <- p("processed/observables_errors_", UGB, "Soo", file_pattern, ".csv")
+data_file_error <- file_pattern_read <- p("observables_errors_", UGB, "Soo", file_pattern, ".csv")
 
 
 large_S_data <- subset(all_data, all_data[,"Sinv"] == 0) 

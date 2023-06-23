@@ -407,9 +407,9 @@ suppressMessages(ggsave(myplot, file=plot_file))
 
 
 
-data_file <- file_pattern_read <- p("processed/observables_", UGB, "Noo", file_pattern, ".csv")
+data_file <- file_pattern_read <- p("observables_", UGB, "Noo", file_pattern, ".csv")
 
-data_file_error <- file_pattern_read <- p("processed/observables_error_", UGB, "Noo", file_pattern, ".csv")
+data_file_error <- file_pattern_read <- p("observables_error_", UGB, "Noo", file_pattern, ".csv")
 
 
 large_N_data <- subset(all_data, all_data[,"Ninv"] == 0) 
